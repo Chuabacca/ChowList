@@ -9,6 +9,11 @@
 import UIKit
 
 class RestaurantsService {
+    // Creating a singleton as a single source of truth ideally allows view models to
+    // get the data they need from the service. The service would only reach out to the API
+    // if the service singletone doesn't already have the data it needs.
+    static let shared = RestaurantsService()
+
     // Structure of data we need for the app
     var restaurants: [Restaurant] = []
     struct Restaurant {
