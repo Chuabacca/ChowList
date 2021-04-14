@@ -9,12 +9,12 @@
 import UIKit
 
 class RestaurantTableViewController: UITableViewController {
+    var model = RestaurantsViewModel()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let service = RestaurantsService()
-        service.getRestaurants()
+        model.updateModel()
     }
 
 

@@ -13,6 +13,7 @@
 		FC57DF132626B42A00CFFEF3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FC57DF122626B42A00CFFEF3 /* Assets.xcassets */; };
 		FC57DF162626B42A00CFFEF3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FC57DF142626B42A00CFFEF3 /* LaunchScreen.storyboard */; };
 		FC57DF222626C7A900CFFEF3 /* RestaurantsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC57DF212626C7A900CFFEF3 /* RestaurantsService.swift */; };
+		FC57DF242627585200CFFEF3 /* RestaurantsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC57DF232627585100CFFEF3 /* RestaurantsViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		FC57DF152626B42A00CFFEF3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FC57DF172626B42A00CFFEF3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FC57DF212626C7A900CFFEF3 /* RestaurantsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantsService.swift; sourceTree = "<group>"; };
+		FC57DF232627585100CFFEF3 /* RestaurantsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantsViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +74,7 @@
 		FC57DF1D2626C5CA00CFFEF3 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				FC57DF232627585100CFFEF3 /* RestaurantsViewModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -171,6 +174,7 @@
 			files = (
 				FC57DF222626C7A900CFFEF3 /* RestaurantsService.swift in Sources */,
 				FC57DF0E2626B42400CFFEF3 /* RestaurantTableViewController.swift in Sources */,
+				FC57DF242627585200CFFEF3 /* RestaurantsViewModel.swift in Sources */,
 				FC57DF0A2626B42400CFFEF3 /* AppDelegate.swift in Sources */,
 				FC57DF0C2626B42400CFFEF3 /* SceneDelegate.swift in Sources */,
 			);

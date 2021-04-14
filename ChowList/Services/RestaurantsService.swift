@@ -9,21 +9,10 @@
 import UIKit
 
 class RestaurantsService {
-    // Creating a singleton as a single source of truth ideally allows view models to
-    // get the data they need from the service. The service would only reach out to the API
-    // if the service singletone doesn't already have the data it needs.
+    // Only a single instance of the service is needed to call the API and decode JSON
     static let shared = RestaurantsService()
+    private let restauratsAPI = URL(string: "https://api.chownow.com/api/company/1")!
 
-    // Structure of data we need for the app
-    var restaurants: [Restaurant] = []
-    struct Restaurant {
-        let name: String
-        let address: String
-        let latitude: Double
-        let longitude: Double
-    }
-
-    // Structure of data from the API
     struct RestaurantData: Codable {
         var locations: [Restaurant]
         struct Restaurant: Codable {
@@ -44,12 +33,8 @@ class RestaurantsService {
 
     init() {}
 
-    // hard code the url string for now
-    let urlString = "https://api.chownow.com/api/company/1"
-
-    func getRestaurants() {
-        let url = URL(string: urlString)!
-        let task = URLSession.shared.dataTask(with: url) { data, response, error in
+    func getRestaurants(_ completion: @escaping (_ restaurantData: RestaurantData) -> Void) {
+        let task = URLSession.shared.dataTask(with: restauratsAPI) { data, response, error in
             if let error = error {
                 print("Handle error: \(error.localizedDescription)")
                 return
@@ -62,32 +47,20 @@ class RestaurantsService {
                 print("Received no data from API.")
                 return
             }
-            self.decodeJSON(data)
+            self.decodeJSON(data, completion)
         }
         task.resume()
     }
 
     // Separate diferent responsibilities into distinct functions
-    func decodeJSON(_ data: Data) -> Void {
+    private func decodeJSON(_ data: Data, _ completion: (_ restaurantData: RestaurantData) -> Void) -> Void {
         do {
             let decoder = JSONDecoder()
             let restaurantData = try decoder.decode(RestaurantData.self, from: data)
-            self.mapRestaurantData(restaurantData)
-            print(self.restaurants.description)
+            completion(restaurantData)
         } catch {
             print("Handle JSON decoding error: \(error)")
         }
     }
 
-    func mapRestaurantData(_ restaurantData: RestaurantData) -> Void {
-        for restaurant in restaurantData.locations {
-            let restaurant = Restaurant(
-                name: restaurant.name,
-                address: restaurant.address.addressString,
-                latitude: restaurant.address.latitude,
-                longitude: restaurant.address.longitude
-            )
-            restaurants.append(restaurant)
-        }
-    }
 }
