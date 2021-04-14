@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  RestaurantTableViewController.swift
 //  ChowList
 //
 //  Created by Jon on 4/13/21.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class RestaurantTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

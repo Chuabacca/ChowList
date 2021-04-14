@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		FC57DF0A2626B42400CFFEF3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC57DF092626B42400CFFEF3 /* AppDelegate.swift */; };
 		FC57DF0C2626B42400CFFEF3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC57DF0B2626B42400CFFEF3 /* SceneDelegate.swift */; };
-		FC57DF0E2626B42400CFFEF3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC57DF0D2626B42400CFFEF3 /* ViewController.swift */; };
+		FC57DF0E2626B42400CFFEF3 /* RestaurantTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC57DF0D2626B42400CFFEF3 /* RestaurantTableViewController.swift */; };
 		FC57DF132626B42A00CFFEF3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FC57DF122626B42A00CFFEF3 /* Assets.xcassets */; };
 		FC57DF162626B42A00CFFEF3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FC57DF142626B42A00CFFEF3 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
@@ -18,7 +18,7 @@
 		FC57DF062626B42400CFFEF3 /* ChowList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChowList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC57DF092626B42400CFFEF3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FC57DF0B2626B42400CFFEF3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		FC57DF0D2626B42400CFFEF3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		FC57DF0D2626B42400CFFEF3 /* RestaurantTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantTableViewController.swift; sourceTree = "<group>"; };
 		FC57DF122626B42A00CFFEF3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FC57DF152626B42A00CFFEF3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FC57DF172626B42A00CFFEF3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -54,14 +54,46 @@
 		FC57DF082626B42400CFFEF3 /* ChowList */ = {
 			isa = PBXGroup;
 			children = (
+				FC57DF1E2626C5DA00CFFEF3 /* Controllers */,
+				FC57DF1D2626C5CA00CFFEF3 /* Models */,
+				FC57DF202626C5EF00CFFEF3 /* Services */,
+				FC57DF1F2626C5E800CFFEF3 /* Views */,
 				FC57DF092626B42400CFFEF3 /* AppDelegate.swift */,
 				FC57DF0B2626B42400CFFEF3 /* SceneDelegate.swift */,
-				FC57DF0D2626B42400CFFEF3 /* ViewController.swift */,
 				FC57DF122626B42A00CFFEF3 /* Assets.xcassets */,
 				FC57DF142626B42A00CFFEF3 /* LaunchScreen.storyboard */,
 				FC57DF172626B42A00CFFEF3 /* Info.plist */,
 			);
 			path = ChowList;
+			sourceTree = "<group>";
+		};
+		FC57DF1D2626C5CA00CFFEF3 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		FC57DF1E2626C5DA00CFFEF3 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		FC57DF1F2626C5E800CFFEF3 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				FC57DF0D2626B42400CFFEF3 /* RestaurantTableViewController.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		FC57DF202626C5EF00CFFEF3 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -134,7 +166,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FC57DF0E2626B42400CFFEF3 /* ViewController.swift in Sources */,
+				FC57DF0E2626B42400CFFEF3 /* RestaurantTableViewController.swift in Sources */,
 				FC57DF0A2626B42400CFFEF3 /* AppDelegate.swift in Sources */,
 				FC57DF0C2626B42400CFFEF3 /* SceneDelegate.swift in Sources */,
 			);
