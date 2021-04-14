@@ -12,6 +12,7 @@
 		FC57DF0E2626B42400CFFEF3 /* RestaurantTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC57DF0D2626B42400CFFEF3 /* RestaurantTableViewController.swift */; };
 		FC57DF132626B42A00CFFEF3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FC57DF122626B42A00CFFEF3 /* Assets.xcassets */; };
 		FC57DF162626B42A00CFFEF3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FC57DF142626B42A00CFFEF3 /* LaunchScreen.storyboard */; };
+		FC57DF222626C7A900CFFEF3 /* RestaurantsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC57DF212626C7A900CFFEF3 /* RestaurantsService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		FC57DF122626B42A00CFFEF3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FC57DF152626B42A00CFFEF3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FC57DF172626B42A00CFFEF3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FC57DF212626C7A900CFFEF3 /* RestaurantsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantsService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +94,7 @@
 		FC57DF202626C5EF00CFFEF3 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				FC57DF212626C7A900CFFEF3 /* RestaurantsService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -166,6 +169,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FC57DF222626C7A900CFFEF3 /* RestaurantsService.swift in Sources */,
 				FC57DF0E2626B42400CFFEF3 /* RestaurantTableViewController.swift in Sources */,
 				FC57DF0A2626B42400CFFEF3 /* AppDelegate.swift in Sources */,
 				FC57DF0C2626B42400CFFEF3 /* SceneDelegate.swift in Sources */,
