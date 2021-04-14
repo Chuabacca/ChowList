@@ -8,7 +8,7 @@
 
 import UIKit
 
-class RestaurantViewController: UIViewController, UITableViewDataSource {
+class RestaurantViewController: UIViewController, UITableViewDataSource, RestaurantsViewModelDelegate {
     var model = RestaurantsViewModel()
 
     let restaurantsTableView = UITableView()
@@ -17,6 +17,7 @@ class RestaurantViewController: UIViewController, UITableViewDataSource {
     override func loadView() {
         super.loadView()
         setupTableView()
+        model.delegate = self
     }
 
     override func viewDidLoad() {
@@ -41,14 +42,22 @@ class RestaurantViewController: UIViewController, UITableViewDataSource {
         view.backgroundColor = .cyan
     }
 
+    // MARK: - UITableViewDataSoure methods
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return model.restaurants.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: restaurantCellIdentifier, for: indexPath)
-        cell.textLabel?.text = "Hello World"
+        cell.textLabel?.text = model.restaurants[indexPath.row].name
         return cell
+    }
+
+    // MARK: - RestaurantsViewModelDelegate method
+    func didLoadData() {
+        DispatchQueue.main.async {
+            self.restaurantsTableView.reloadData()
+        }
     }
 
 }

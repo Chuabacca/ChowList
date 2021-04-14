@@ -10,6 +10,7 @@ import Foundation
 
 class RestaurantsViewModel {
     let service = RestaurantsService.shared
+    var delegate: RestaurantsViewModelDelegate?
 
     var restaurants: [Restaurant] = []
     struct Restaurant {
@@ -30,7 +31,12 @@ class RestaurantsViewModel {
                 )
                 self?.restaurants.append(restaurant)
             }
+            self?.delegate?.didLoadData()
             print(self?.restaurants.description)
         }
     }
+}
+
+protocol RestaurantsViewModelDelegate {
+    func didLoadData()
 }
