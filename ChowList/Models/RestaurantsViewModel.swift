@@ -13,6 +13,7 @@ class RestaurantsViewModel {
     var delegate: RestaurantsViewModelDelegate?
 
     var restaurants: [Restaurant] = []
+    // This Restaurant struct will be passed to the detail views
     struct Restaurant {
         let name: String
         let address: String
@@ -32,11 +33,15 @@ class RestaurantsViewModel {
                 self?.restaurants.append(restaurant)
             }
             self?.delegate?.didLoadData()
-            print(self?.restaurants.description)
+            // Debugging. A full production app can use dependency injection to mock the service
+            // and test that the model is formatting and storing data correctly.
+            print(self?.restaurants.description ?? "Model is empty.")
         }
     }
 }
 
+// The protocol/delegate pattern can be changed to notification/observer pattern if multiple views
+// are relying on this model for data.
 protocol RestaurantsViewModelDelegate {
     func didLoadData()
 }

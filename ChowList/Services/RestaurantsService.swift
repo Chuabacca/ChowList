@@ -36,6 +36,8 @@ class RestaurantsService {
     func getRestaurants(_ completion: @escaping (_ restaurantData: RestaurantData) -> Void) {
         let task = URLSession.shared.dataTask(with: restauratsAPI) { data, response, error in
             if let error = error {
+                // A production app should use error logging and automated monitoring
+                // so that problems with the API can be detected and mitigated.
                 print("Handle error: \(error.localizedDescription)")
                 return
             }

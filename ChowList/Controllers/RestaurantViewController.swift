@@ -19,11 +19,6 @@ class RestaurantViewController: UIViewController, UITableViewDelegate, UITableVi
         setupTableView()
         setupNavigationBar()
         model.delegate = self
-    }
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
         model.updateModel()
     }
 
@@ -67,7 +62,7 @@ class RestaurantViewController: UIViewController, UITableViewDelegate, UITableVi
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let vc = RestaurantDetailViewController(model: model.restaurants[indexPath.row])
+        let vc = RestaurantDetailView(model: model.restaurants[indexPath.row])
         self.navigationController?.pushViewController(vc, animated: true)
         tableView.deselectRow(at: indexPath, animated: true)
     }

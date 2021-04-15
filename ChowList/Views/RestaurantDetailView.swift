@@ -1,5 +1,5 @@
 //
-//  RestaurantDetailViewController.swift
+//  RestaurantDetailView.swift
 //  ChowList
 //
 //  Created by Jon on 4/14/21.
@@ -9,7 +9,9 @@
 import UIKit
 import MapKit
 
-class RestaurantDetailViewController: UIViewController {
+// This view controller does not interact with the model and doesn't contain user input logic
+// so it can be considered a view.
+class RestaurantDetailView: UIViewController {
     var model: RestaurantsViewModel.Restaurant
 
     let mapView = MKMapView()
@@ -32,8 +34,9 @@ class RestaurantDetailViewController: UIViewController {
     }
 
     func setupView() {
-        view.backgroundColor = .white
+        view.backgroundColor = UIColor(named: "frosting")
 
+        // Map View can be separated into it's own view for better encapsulation of responsibility.
         mapView.translatesAutoresizingMaskIntoConstraints = false
         let center = CLLocationCoordinate2D(latitude: model.latitude, longitude: model.longitude)
         let region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))
