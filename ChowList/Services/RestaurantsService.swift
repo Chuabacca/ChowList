@@ -22,7 +22,7 @@ class RestaurantsService {
                 var latitude: Double
                 var longitude: Double
                 enum CodingKeys: String, CodingKey {
-                    case addressString = "address_string"
+                    case addressString = "formatted_address"
                     case latitude
                     case longitude
                 }
