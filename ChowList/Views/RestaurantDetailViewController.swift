@@ -12,8 +12,8 @@ import MapKit
 class RestaurantDetailViewController: UIViewController {
     var model: RestaurantsViewModel.Restaurant
 
-    let nameLabel = UILabel()
     let mapView = MKMapView()
+    let nameLabel = UILabel()
     let addressLabel = UILabel()
 
     init(model: RestaurantsViewModel.Restaurant) {
@@ -34,13 +34,6 @@ class RestaurantDetailViewController: UIViewController {
     func setupView() {
         view.backgroundColor = .white
 
-        nameLabel.translatesAutoresizingMaskIntoConstraints = false
-        nameLabel.numberOfLines = 0
-        nameLabel.font = .systemFont(ofSize: 18, weight: .semibold)
-        addressLabel.textColor = UIColor(named: "squid-ink")
-        nameLabel.text = model.name
-        view.addSubview(nameLabel)
-
         mapView.translatesAutoresizingMaskIntoConstraints = false
         let center = CLLocationCoordinate2D(latitude: model.latitude, longitude: model.longitude)
         let region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))
@@ -55,23 +48,30 @@ class RestaurantDetailViewController: UIViewController {
         mapView.clipsToBounds = true
         view.addSubview(mapView)
 
+        nameLabel.translatesAutoresizingMaskIntoConstraints = false
+        nameLabel.numberOfLines = 0
+        nameLabel.font = .systemFont(ofSize: 20, weight: .semibold)
+        addressLabel.textColor = UIColor(named: "squid-ink")
+        nameLabel.text = model.name
+        view.addSubview(nameLabel)
+
         addressLabel.translatesAutoresizingMaskIntoConstraints = false
         addressLabel.numberOfLines = 0
-        addressLabel.font = .systemFont(ofSize: 14)
+        addressLabel.font = .systemFont(ofSize: 16)
         addressLabel.textColor = UIColor(named: "squid-ink")
         addressLabel.text = model.address
         view.addSubview(addressLabel)
 
         NSLayoutConstraint.activate([
-            nameLabel.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
-            nameLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20),
-
-            mapView.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 20),
+            mapView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
             mapView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 20),
             mapView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -20),
 
+            nameLabel.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
+            nameLabel.topAnchor.constraint(equalTo: mapView.bottomAnchor, constant: 20),
+
             addressLabel.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
-            addressLabel.topAnchor.constraint(equalTo: mapView.bottomAnchor, constant: 20),
+            addressLabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 20),
             addressLabel.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -20)
         ])
     }
