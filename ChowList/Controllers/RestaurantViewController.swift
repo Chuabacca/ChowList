@@ -8,7 +8,7 @@
 
 import UIKit
 
-class RestaurantViewController: UIViewController, UITableViewDataSource, RestaurantsViewModelDelegate {
+class RestaurantViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, RestaurantsViewModelDelegate {
     var model = RestaurantsViewModel()
 
     let restaurantsTableView = UITableView()
@@ -29,6 +29,7 @@ class RestaurantViewController: UIViewController, UITableViewDataSource, Restaur
 
     func setupTableView() {
         restaurantsTableView.translatesAutoresizingMaskIntoConstraints = false
+        restaurantsTableView.delegate = self
         restaurantsTableView.dataSource = self
         restaurantsTableView.register(UITableViewCell.self, forCellReuseIdentifier: restaurantCellIdentifier)
         restaurantsTableView.backgroundColor = UIColor(named: "goji-berry")
@@ -53,7 +54,7 @@ class RestaurantViewController: UIViewController, UITableViewDataSource, Restaur
         ]
     }
 
-    // MARK: - UITableViewDataSoure methods
+    // MARK: - UITableViewDataSoure and Delegate methods
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return model.restaurants.count
     }
@@ -65,7 +66,9 @@ class RestaurantViewController: UIViewController, UITableViewDataSource, Restaur
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        let vc = RestaurantDetailViewController(model: model.restaurants[indexPath.row])
+        self.navigationController?.pushViewController(vc, animated: true)
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 
     // MARK: - RestaurantsViewModelDelegate method

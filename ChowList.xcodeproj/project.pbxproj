@@ -14,6 +14,7 @@
 		FC57DF162626B42A00CFFEF3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FC57DF142626B42A00CFFEF3 /* LaunchScreen.storyboard */; };
 		FC57DF222626C7A900CFFEF3 /* RestaurantsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC57DF212626C7A900CFFEF3 /* RestaurantsService.swift */; };
 		FC57DF242627585200CFFEF3 /* RestaurantsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC57DF232627585100CFFEF3 /* RestaurantsViewModel.swift */; };
+		FC57DF4C2627BEE700CFFEF3 /* RestaurantDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC57DF4B2627BEE700CFFEF3 /* RestaurantDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		FC57DF172626B42A00CFFEF3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FC57DF212626C7A900CFFEF3 /* RestaurantsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantsService.swift; sourceTree = "<group>"; };
 		FC57DF232627585100CFFEF3 /* RestaurantsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantsViewModel.swift; sourceTree = "<group>"; };
+		FC57DF4B2627BEE700CFFEF3 /* RestaurantDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +92,7 @@
 		FC57DF1F2626C5E800CFFEF3 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				FC57DF4B2627BEE700CFFEF3 /* RestaurantDetailViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -176,6 +179,7 @@
 				FC57DF0E2626B42400CFFEF3 /* RestaurantViewController.swift in Sources */,
 				FC57DF242627585200CFFEF3 /* RestaurantsViewModel.swift in Sources */,
 				FC57DF0A2626B42400CFFEF3 /* AppDelegate.swift in Sources */,
+				FC57DF4C2627BEE700CFFEF3 /* RestaurantDetailViewController.swift in Sources */,
 				FC57DF0C2626B42400CFFEF3 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
