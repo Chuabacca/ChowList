@@ -17,6 +17,7 @@ class RestaurantViewController: UIViewController, UITableViewDataSource, Restaur
     override func loadView() {
         super.loadView()
         setupTableView()
+        setupNavigationBar()
         model.delegate = self
     }
 
@@ -30,6 +31,7 @@ class RestaurantViewController: UIViewController, UITableViewDataSource, Restaur
         restaurantsTableView.translatesAutoresizingMaskIntoConstraints = false
         restaurantsTableView.dataSource = self
         restaurantsTableView.register(UITableViewCell.self, forCellReuseIdentifier: restaurantCellIdentifier)
+        restaurantsTableView.backgroundColor = UIColor(named: "goji-berry")
         view.addSubview(restaurantsTableView)
 
         NSLayoutConstraint.activate([
@@ -39,7 +41,16 @@ class RestaurantViewController: UIViewController, UITableViewDataSource, Restaur
             restaurantsTableView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor)
         ])
 
-        view.backgroundColor = .cyan
+        view.backgroundColor = UIColor(named: "goji-berry")
+    }
+
+    func setupNavigationBar() {
+        navigationItem.title = "Restaurants"
+        self.navigationController?.navigationBar.barTintColor = UIColor(named: "goji-berry")
+        self.navigationController?.navigationBar.isTranslucent = false
+        self.navigationController?.navigationBar.titleTextAttributes = [
+            NSAttributedString.Key.foregroundColor: UIColor(named: "squid-ink") ?? UIColor.black
+        ]
     }
 
     // MARK: - UITableViewDataSoure methods
@@ -51,6 +62,10 @@ class RestaurantViewController: UIViewController, UITableViewDataSource, Restaur
         let cell = tableView.dequeueReusableCell(withIdentifier: restaurantCellIdentifier, for: indexPath)
         cell.textLabel?.text = model.restaurants[indexPath.row].name
         return cell
+    }
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
     }
 
     // MARK: - RestaurantsViewModelDelegate method
