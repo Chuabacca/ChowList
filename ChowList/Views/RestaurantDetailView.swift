@@ -60,6 +60,7 @@ class RestaurantDetailView: UIViewController {
 
         addressLabel.translatesAutoresizingMaskIntoConstraints = false
         addressLabel.numberOfLines = 0
+        addressLabel.textAlignment = .center
         addressLabel.font = .systemFont(ofSize: 16)
         addressLabel.textColor = UIColor(named: "squid-ink")
         addressLabel.text = model.address
@@ -74,6 +75,7 @@ class RestaurantDetailView: UIViewController {
             nameLabel.topAnchor.constraint(equalTo: mapView.bottomAnchor, constant: 20),
 
             addressLabel.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
+            addressLabel.widthAnchor.constraint(equalTo: view.safeAreaLayoutGuide.widthAnchor, constant: -40),
             addressLabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 20),
             addressLabel.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -20)
         ])

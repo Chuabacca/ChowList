@@ -43,7 +43,7 @@ class RestaurantViewController: UIViewController, UITableViewDelegate, UITableVi
     func setupNavigationBar() {
         navigationItem.title = "Restaurants"
         self.navigationController?.navigationBar.barTintColor = UIColor(named: "goji-berry")
-        self.navigationController?.navigationBar.tintColor = UIColor(named: "goji-berry")
+        self.navigationController?.navigationBar.tintColor = UIColor(named: "squid-ink")
         self.navigationController?.navigationBar.prefersLargeTitles = true
         self.navigationController?.navigationBar.titleTextAttributes = [
             NSAttributedString.Key.foregroundColor: UIColor(named: "squid-ink") ?? UIColor.black
